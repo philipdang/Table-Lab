@@ -1,19 +1,37 @@
-class book{
-public:
-	enum isOpen{open, closed};
-int numPages(); const{return numPages;}
-string title(); const{return title;}
+#include <string>
+#include <iostream>
 
-isOpen(isOpen isopen){
-if (isOpen == open)
-surfaceArea = 10;
-if (isOpen == closed)
-surfaceArea = 5;
-}
+using namespace std;
+
+
+class book
+{
+public:
+    enum isOpen{open, closed};
+    int numPages(); const{return numPages;}
+    string title(); const{return title;}
+    
+    getDimensions(){
+        cout << "What is the length of the book?: ";
+        cin >> length;
+        cout << "What is the width of the book?: ";
+        cin >> width;
+        return length, width;
+    }
+    
+    isOpen(isOpen isopen){
+    if (isOpen == open)
+        return length, width;
+    if (isOpen == closed)
+        length = length / 2;
+        width = width / 2;
+        return length, width;
+    }
 
 private:
-isOpen isopen;
-int numPages, surfaceArea;
-string title;
-	};
-	
+    isOpen isopen;
+    int numPages, length, width;
+    string title;
+    
+    
+};

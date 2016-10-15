@@ -4,15 +4,27 @@ using namespace std;
 
 class tissuebox
 {
-public int numTissues(); const{return numTissues;}
-int currentTissues(); const{return currentTissues;}
-int maxTissues(); const{return maxTissues;}
+public:
+    int numTissues(); const{return numTissues;}
+    int currentTissues(); const{return currentTissues;}
+    int maxTissues(); const{return maxTissues;}
+    
+    getDimensions(){
+        cout << "What is the length of the tissuebox?: ";
+        cin >> length;
+        cout << "What is the width of the tissuebox?: ";
+        cin >> width;
+        return length, width;
+    }
+    
+    
+    int useTissue()
+    {
+        currentTissues = currentTissues - 1;
+        return currentTissues;
+    }
+    
+private:
+    int numTissues, currentTissues, maxTissues;
 
-int useTissue()
-{
-	currentTissues = currentTissues -1;
-	return currentTissues;
-}
-
-private numTissues, currenTissues, maxTissues;
 };

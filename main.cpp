@@ -1,79 +1,98 @@
-#include <iostream>
-using namespace std;
-
 class lamp
 {
-	private:
+private:
 	color lampColor;
 	int length, width;
-	int area;
+	int area = get_area();
 
-	public:
-	bool isOn(string answer);
+public:
+	int get_area() {return length * wdith;}
+
+	void get_length()
+	{
+		cout << "What is the length of the lamp? ";
+		cin >> length;
+	}
+	void get_width()
+	{
+		cout << "What is the width of the lamp? ";
+		cin >> width;
+	}
+
+	void get_color();
 	void lamp_light();
+	bool isOn();
+};
 
-	cout << "What is the length of the lamp?";
-	cin >> length;
-
-	cout << "What is the width of the lamp?";
-	cin >> width;
-
-	int area() {return length * width};
+void lamp::get_color()
+{
+	string answer;
+	while(true)
+	{
+		cout << "Would you like a BLACK, BLUE, PURPLE, OR WHITE table? ";
+		cin >> answer;
+		if (answer == "Black" || answer == "black")
+		{
+			lampColor = black;
+			break;
+		}
+		else if (answer == "Blue" || answer == "blue")
+		{
+			lampColor = blue;
+			break;
+		}
+		else if (answer == "Purple" || answer == "purple")
+		{
+			lampColor = purple;
+			break;
+		}
+		else if (answer == "White" || answer == "white")
+		{
+			lampColor = white;
+			break;
+		}
+		else
+		{
+			cout << "Please choose only one of the available colors." << endl;
+			continue;
+		}
+	}
 }
 
-bool lamp::isOn(string answer)
+bool lamp::isOn()
 {
-	if (answer == "Yes" || answer == "yes")
-		return true;
-	else if (answer == "No" || answer == "no")
-		return false;
-}
+	bool temp;
+	while(true)
+	{
+		char answer;
 
-void lamp::lamp_color()
-{
-	string color;
-
-	cout << "Would you like the lamp to be White, Blue, Black, or Purple?"
-	cin >> color
-
-	if (color == "White" || color == "white")
-	{
-		cout << "You have chosen a white lamp." << break;
-	}
-	else if (color == "Blue" || color == "blue")
-	{
-		cout << "You have chosen a blue lamp." << break;
-	}
-	else if (color == "Black" || color == "black")
-	{
-		cout << "You have chosen a black lamp." << break;
-	}
-	else if (color == "Purple" || color == "purple")
-	{
-		cout << "You have chosen a purple lamp." << break;
-	}
-	else
-	{
-		cout << "Please choose the according colors from the list." << continue;
+		cout << "Would you like the lamp to be on(y/n)? ";
+		cin >> answer;
+		if (answer == 'Y' || answer == 'y')
+		{
+			temp = true; // lamp is on
+			return temp;
+			break;
+		}
+		else if (answer == 'N' || answer == 'n')
+		{
+			temp = false; // lamp is off
+			return temp;
+			break;
+		}
+		else
+		{
+			cout << "Please answer y or n only." << endl;
+		}
 	}
 }
 
 void lamp::lamp_light()
 {
-	string answer;
-
-	cout << "Would you like the lamp to be on?";
-	cin >> answer;
-
-	bool isItOn == isOn(answer);
+	bool isItOn = isOn();
 
 	if (isItOn == true)
 		cout << "The lamp is turned on." << endl;
 	else
 		cout << "The lamp is turned off." << endl;
-}
-
-int main()
-{
-	return 0;
 }

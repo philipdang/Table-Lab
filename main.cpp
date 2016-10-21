@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include<iostream>
 #include<list>
 #include<string>
@@ -517,4 +518,5 @@ void tissueBox::wanna_use_tissue(tissueBox box)
     else
         cout << "You have run out of tissues." << endl;
 }
+
 

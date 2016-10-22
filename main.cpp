@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #include<iostream>
 #include<list>
 #include<string>
@@ -20,7 +19,41 @@ Main
 */
 int main(void)
 {
-
+	table mainTable;
+    	book mainBook;
+    	tissueBox mainTissueBox;
+    	lamp mainLamp;
+    
+    	bool isBook, isBox, isLamp;
+    
+    	mainTable.get_color();
+    	mainTable.get_material();
+    	mainTable.get_width();
+    	mainTable.get_length();
+    	mainTable.get_area();
+    
+    	cout << endl;
+    
+    	// Book?
+    	mainTable.add_book(mainBook, isBook);
+    
+    	// Tissue Box?
+    	mainTable.add_tissueBox(mainTissueBox, isBox);
+    
+    	// Lamp?
+    	mainTable.add_lamp(mainLamp, isLamp);
+    
+    	cout << endl;
+    
+    	mainTable.output_areas(mainBook, mainTissueBox, mainLamp, isBook, isBox, isLamp);
+    
+    	mainTable.remove_book(mainBook, isBook);
+    	mainTable.remove_tissueBox(mainTissueBox, isBox);
+    	mainTable.remove_lamp(mainLamp, isLamp);
+    
+    	mainTable.output_areas(mainBook, mainTissueBox, mainLamp, isBook, isBox, isLamp);
+    
+    	return 0;
 }
 
 /*
